@@ -1,0 +1,52 @@
+====================================================================
+README.txt for Axel Wahlstrom
+Anonymous Web Get - awget.py
+====================================================================
+====================================================================
+running the project: ss.py
+====================================================================
+On CS Lab machines run the command python ss.py to run an instance of a stepping-stone server. This will act as a node for the Anonymous Web Get. ss.py acts as both the client and the server and can handle multiple concurrent requests.
+====================================================================
+the usage for ss.py is shown for the CSU CS Lab machines:
+
+python ss.py [-p portnumber]
+
+ss.py will run and display the portnumber and ip ss.py is listening on. 
+
+DEFAULT PORT # = 33333
+====================================================================
+running the project: awget.py
+====================================================================
+On CS Lab machines run the command python awget.py to run an instance of the interface for awget. Put awget.py in the same directory where you would like the files to be downloaded to.
+====================================================================
+the usage for awget.py is shown for CSU CS Lab machines:
+
+python awget.py [URL] [-c chainfile]
+
+awget.py will use a default chainfile "chaingang.txt" which an example is provided for you.
+
+The number is the number of links followed by a list of tuples of type (IP, port)
+
+Fill the template chaingang.txt with the number of nodes you would like, as well as the IP and port numbers of each of your nodes running ss.py
+
+Otherwise, you may create your own chaingang configuration file of a name of your choice. Simple specify in the project arguments.
+
+i.e. - python awget.py URL -c example.txt
+
+awget.py is not perfect. If the nodes are not running ss.py then awget.py will NOT timeout the connection. awget.py Will simply just need to be restarted after all the nodes are established.
+====================================================================
+running the project: chaingang.txt
+====================================================================
+chaingang.txt IS your node chain configuration file!
+
+This is necessary for awget.py to work. Without it, awget.py will not run!
+
+Example of chaingang.txt with 3 nodes:
+
+3
+10.0.0.1
+10.0.0.2
+10.0.0.3
+====================================================================
+Axel Wahlstrom, CS457 - Computer Networks and the Internet 2020
+====================================================================
